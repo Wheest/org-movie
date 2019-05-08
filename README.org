@@ -1,0 +1,24 @@
+* org-movie
+
+This package turns IMDB links into fully formatted org-mode headlines, including automatic tagging by genre.  For example:
+
+#+BEGIN_SRC org
+* [[https://www.imdb.com/title/tt0419677][Dead Man's Shoes]] [2004]                            :CRIME:DRAMA:THRILLER:
+:PROPERTIES:
+:Director: Shane Meadows
+:Year:     2004
+:Actors:   Paddy Considine, Gary Stretch, Toby Kebbell, Stuart Wolfenden
+:Genre:    Crime, Drama, Thriller
+:Plot:     A disaffected soldier returns to his hometown to get even with the thugs who brutalized his mentally-challenged brother years ago.
+:Runtime:  90 min
+:END:
+#+END_SRC
+
+To use, register an API key with [[https://www.omdbapi.com/]], and set the variable ~org-movie-omdb-apikey nil~ to the key you are sent.
+
+Then, the use the function ~org-movie-from-imdb~ to generate your headlines.
+
+The project is adapted from [[https://gist.github.com/bo0ts/4290237][this gist by bo0ts]].
+
+** Features to add:
+- Allow customisation of formatting of data, following the API reference https://media.readthedocs.org/pdf/omdbpy/latest/omdbpy.pdf
